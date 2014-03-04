@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}title{% endblock %}</title>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <nav class="top-bar" data-topbar>
+            {% include 'menu.twig' %}
+            <ul class="title-area">
+                <!-- Title Area -->
+                <li class="name">
+                    <h1>
+                        <a href="/">
+                            nepoteidea
+                        </a>
+                    </h1>
+                </li>
+            </ul>            
+         </nav>
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Welcome to Foundation</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/modernizr.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+    </body>
+</html>
