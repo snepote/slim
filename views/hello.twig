@@ -1,5 +1,7 @@
 {% extends 'layout.twig' %}
 
+{% block title %}hello {{ name|e }}{% endblock title %}
+
 {% block content %}
-    {{ name|e }}
+    hello {{ name|e }}
 {% endblock %}

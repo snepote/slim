@@ -24,6 +24,10 @@ $app->get('/', function() use ($app) {
     ));    
 });
 
+$app->get('/hello', function() use ($app) {
+    $app->render('hello.twig', array());
+});
+
 $app->get('/hello/:name', function($name) use ($app) {
     $app->render('hello.twig', array(
         'name' => $name,
