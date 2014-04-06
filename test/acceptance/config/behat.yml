@@ -1,0 +1,31 @@
+# behat.yml
+default:
+    paths:
+        features: %behat.paths.base%/../features
+        bootstrap: %behat.paths.features%/bootstrap
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: http://slim.dev
+            goutte: ~
+    formatter:
+            parameters:
+                decorated:              true
+                verbose:                true
+                time:                   true
+                language:               en
+                multiline_arguments:    true
+cli:
+    formatter:
+            name:                       pretty
+            parameters:
+                output_path:            null
+ci:
+    formatter:
+            name:                       junit
+            parameters:
+                output_path:            null                
+report:
+    formatter:
+            name:                       html
+            parameters:
+                output_path:            %behat.paths.base%/../../reports/behat_report.html
