@@ -4,8 +4,9 @@
  *
  * @author Sebastian Nepote <snepote@gmail.com>
  */
+define('VENDOR_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor');
 
-require __DIR__ . '/../vendor/autoload.php';
+require VENDOR_PATH . DIRECTORY_SEPARATOR . 'autoload.php';
 function customAutoload($className)
 {
     if (class_exists($className) || interface_exists($className)) {

@@ -1,6 +1,8 @@
 # IDE settings
 .idea
 
+/views/cache/*
+
 # Vendor
 /vendor
 /bin

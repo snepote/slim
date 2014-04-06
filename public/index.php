@@ -4,4 +4,4 @@
  * @author Sebastian Nepote <snepote@gmail.com>
  */
 
-require __DIR__ . '/../src/app.php';
+require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'app.php';
