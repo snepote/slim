@@ -7,6 +7,12 @@
 define('VENDOR_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor');
 
 require VENDOR_PATH . DIRECTORY_SEPARATOR . 'autoload.php';
+
+/**
+ * @param string $className Class name
+ *
+ * @return bool
+ */
 function customAutoload($className)
 {
     if (class_exists($className) || interface_exists($className)) {
@@ -19,7 +25,7 @@ function customAutoload($className)
 
     $filename = __DIR__ . DIRECTORY_SEPARATOR . str_replace("\\", DIRECTORY_SEPARATOR, $className) . '.php';
     if (is_readable($filename)) {
-        require($filename);
+        include $filename;
         return true;
     } else {
         return false;

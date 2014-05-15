@@ -2,7 +2,10 @@
 /**
  * Application
  *
+ * PHP version 5.4.*
+ *
  * @author Sebastian Nepote <snepote@gmail.com>
+ *
  */
 
 require __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
@@ -21,7 +24,7 @@ $view->parserOptions = array(
 $app->get('/', function() use ($app) {
     $app->render('index.twig', array(
         'foo' => 'bar',
-    ));    
+    ));
 });
 
 $app->get('/hello', function() use ($app) {

@@ -1,0 +1,16 @@
+PHP CODE SNIFFER VIOLATION SOURCE SUMMARY
+--------------------------------------------------------------------------------
+STANDARD  CATEGORY            SNIFF                                        COUNT
+--------------------------------------------------------------------------------
+PEAR      Commenting          File comment missing tag                     8
+PEAR      Functions           Function call signature close bracket line   6
+PEAR      Functions           Function call signature content after open   6
+PEAR      Functions           Function declaration space after function    3
+Generic   Files               Line length too long                         2
+PEAR      Commenting          File comment missing version                 2
+PEAR      Files               Including file use include                   1
+PEAR      Files               Including file brackets not required         1
+PEAR      Commenting          Function comment missing                     1
+--------------------------------------------------------------------------------
+A TOTAL OF 30 SNIFF VIOLATION(S) WERE FOUND IN 9 SOURCE(S)
+--------------------------------------------------------------------------------

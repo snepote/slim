@@ -11,7 +11,10 @@
         "behat/mink":"*",
         "behat/mink-extension":"*",
         "behat/mink-sahi-driver": "*",
-        "behat/mink-goutte-driver":"*"
+        "behat/mink-goutte-driver":"*",
+        "phpmd/phpmd" : "1.4.*",
+        "squizlabs/php_codesniffer": "1.*",
+        "sebastian/phpcpd": "2.0.1"
     },
     "autoload": {
         "psr-0": {
