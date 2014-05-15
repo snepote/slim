@@ -14,7 +14,8 @@
         "behat/mink-goutte-driver":"*",
         "phpmd/phpmd" : "1.4.*",
         "squizlabs/php_codesniffer": "1.*",
-        "sebastian/phpcpd": "2.0.1"
+        "sebastian/phpcpd": "2.0.1",
+        "phploc/phploc": "*"
     },
     "autoload": {
         "psr-0": {

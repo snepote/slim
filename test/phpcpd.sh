@@ -1,4 +1,2 @@
 #!/bin/sh
-# verbose output level: debug
-# no interactive question
-../vendor/bin/phpcpd ../src --log-pmd ./reports/phpcpd.xml --fuzzy --progress -vvv --no-interaction
+../vendor/bin/phpcpd ../src --fuzzy -vvv --no-interaction > reports/phpcpd.txt
