@@ -2,8 +2,11 @@ PHP CODE SNIFFER REPORT SUMMARY
 --------------------------------------------------------------------------------
 FILE                                                            ERRORS  WARNINGS
 --------------------------------------------------------------------------------
-/usr/share/nginx/www/slim.dev/src/app.php                       19      2
-/usr/share/nginx/www/slim.dev/src/bootstrap.php                 7       2
+/usr/share/nginx/www/slim.dev/src/app.php                       4       1
+/usr/share/nginx/www/slim.dev/src/bootstrap.php                 5       1
+/usr/share/nginx/www/slim.dev/src/Snepote/Controller/Base.php   7       0
+/usr/share/nginx/www/slim.dev/src/Snepote/Controller/Index.php  7       0
+/usr/share/nginx/www/slim.dev/src/Snepote/Cualquiera.php        9       1
 --------------------------------------------------------------------------------
-A TOTAL OF 26 ERROR(S) AND 4 WARNING(S) WERE FOUND IN 2 FILE(S)
+A TOTAL OF 32 ERROR(S) AND 3 WARNING(S) WERE FOUND IN 5 FILE(S)
 --------------------------------------------------------------------------------

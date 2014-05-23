@@ -2,7 +2,7 @@ PHP CODE SNIFFER GIT BLAME SUMMARY
 --------------------------------------------------------------------------------
 AUTHOR                                              (Author %) (Overall %) COUNT
 --------------------------------------------------------------------------------
-Sebastian Nepote                                       (27.69)       (100)    30
+Sebastian Nepote                                        (7.28)       (100)    35
 --------------------------------------------------------------------------------
-A TOTAL OF 30 SNIFF VIOLATION(S) WERE COMMITTED BY 1 AUTHOR(S)
+A TOTAL OF 35 SNIFF VIOLATION(S) WERE COMMITTED BY 1 AUTHOR(S)
 --------------------------------------------------------------------------------
