@@ -5,15 +5,15 @@
  * PHP version 5.4.*
  *
  * @author Sebastian Nepote <snepote@gmail.com>
- *
  */
 
-include __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
-$app = new \Slim\Slim(array(
+$app = new \Slim\Slim(
+    array(
     'templates.path' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views',
-    'view' => new \Slim\Views\Twig()
-));
+    'view' => new \Slim\Views\Twig())
+);
 
 $view = $app->view();
 $view->parserOptions = array(
@@ -21,27 +21,12 @@ $view->parserOptions = array(
     'cache' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'cache'
 );
 
-$app->get('/', function() use ($app) {
-        (new \Snepote\IndexController($app))->index();
-    });
-//$app->get('/', new Snepote\IndexController($app));
-
-/*
-$app->get('/', function() use ($app) {
-    $app->render('index.twig', array(
-        'foo' => 'bar',
-    ));
-});
-*/
-
-$app->get('/hello', function() use ($app) {
-    $app->render('hello.twig', array());
-});
-
-$app->get('/hello/:name', function($name) use ($app) {
-    $app->render('hello.twig', array(
-        'name' => $name,
-    ));
-});
+$app->get('/', 'Snepote\Controller\Index:index');
+$app->get('/hello', 'Snepote\Controller\Index:hello');
+$app->get(
+    '/hello/:name', function ($name) use ($app) {
+        (new Snepote\Controller\Index())->hello($name);
+    }
+);
 
 $app->run();

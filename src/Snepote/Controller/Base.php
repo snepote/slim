@@ -7,15 +7,15 @@
  * @author Sebastian Nepote <sebastian.nepote@tirendo.com>
  */
 
-namespace Snepote;
+namespace Snepote\Controller;
 
 /**
- * Class BaseController
+ * Class Base
  *
  * @package Snepote
  * @author  Sebastian Nepote <sebastian.nepote@tirendo.com>
  */
-class BaseController
+class Base
 {
     /**
      * @var \Slim\Slim
@@ -24,11 +24,10 @@ class BaseController
 
     /**
      * Base controller constructor
-     *
-     * @param \Slim\Slim $app Application instance
      */
-    public function __construct(\Slim\Slim $app)
+    public function __construct()
     {
+        global $app;
         $this->app = $app;
     }
 } 
