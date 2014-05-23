@@ -2,33 +2,11 @@
 /**
  * Application bootstrap
  *
- * @author Sebastian Nepote <snepote@gmail.com>
- */
-define('VENDOR_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor');
-
-require VENDOR_PATH . DIRECTORY_SEPARATOR . 'autoload.php';
-
-/**
- * @param string $className Class name
+ * PHP version ~5.4
  *
- * @return bool
+ * @author Sebastian Nepote <snepote@gmail.com>
+ * @since  0.0.1
  */
-function customAutoload($className)
-{
-    if (class_exists($className) || interface_exists($className)) {
-        return true;
-    }
 
-    if ((version_compare(PHP_VERSION, '5.4.0') >= 0) && trait_exists($className)) {
-        return true;
-    }
-
-    $filename = __DIR__ . DIRECTORY_SEPARATOR . str_replace("\\", DIRECTORY_SEPARATOR, $className) . '.php';
-    if (is_readable($filename)) {
-        include $filename;
-        return true;
-    } else {
-        return false;
-    }
-}
-spl_autoload_register('customAutoload');
+date_default_timezone_set('Europe/Berlin');
+include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';

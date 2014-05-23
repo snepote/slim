@@ -8,7 +8,7 @@
  *
  */
 
-require __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
+include __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
 $app = new \Slim\Slim(array(
     'templates.path' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views',
@@ -22,10 +22,17 @@ $view->parserOptions = array(
 );
 
 $app->get('/', function() use ($app) {
+        (new \Snepote\IndexController($app))->index();
+    });
+//$app->get('/', new Snepote\IndexController($app));
+
+/*
+$app->get('/', function() use ($app) {
     $app->render('index.twig', array(
         'foo' => 'bar',
     ));
 });
+*/
 
 $app->get('/hello', function() use ($app) {
     $app->render('hello.twig', array());
