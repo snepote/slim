@@ -21,9 +21,9 @@ cli:
                 output_path:            null
 ci:
     formatter:
-            name:                       junit
+            name:                       pretty
             parameters:
-                output_path:            null                
+                output_path:            null
 report:
     formatter:
             name:                       html

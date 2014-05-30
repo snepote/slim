@@ -8,7 +8,8 @@ show_help() {
 }
 
 acceptance_test() {
-    php ../vendor/bin/behat --config acceptance/config/behat.yml --profile $PROFILE
+    FILE_PATH=$(dirname $(readlink -f "$0"))
+    php $FILE_PATH/../vendor/bin/behat --config $FILE_PATH/acceptance/config/behat.yml --profile $PROFILE
 }
 
 

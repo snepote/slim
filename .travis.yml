@@ -5,7 +5,19 @@ php:
 install:
    - composer --dev --profile --prefer-source install
 
+# Unit tests
 script: sh test/phpunit.sh
+
+# Acceptance tests
+before_script:
+  - sudo apt-get install nginx
+  - sudo service nginx start
+  - sudo cp -f build/slim.dev /etc//etc/nginx/sites-available/slim.dev
+  - sudo ln -s /etc/nginx/sites-available/slim.dev /etc/nginx/sites-enabled/slim.dev
+  - sudo echo 127.0.0.1 slim.dev >> /etc/hosts
+  - sudo service nginx restart
+
+script: sh test/behat.sh -p ci
 
 notifications:
   email: "snepote@gmail.com"
