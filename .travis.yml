@@ -14,7 +14,7 @@ before_script:
   - sudo service nginx start
   - sudo cp -f build/slim.dev /etc/nginx/sites-available/slim.dev
   - sudo ln -s /etc/nginx/sites-available/slim.dev /etc/nginx/sites-enabled/slim.dev
-  - sudo echo 127.0.0.1 slim.dev >> /etc/hosts
+  - sudo sed -i 's/localhost/localhost slim.dev/g' /etc/hosts
   - sudo service nginx reload
 
 script: sh test/behat.sh -p ci
