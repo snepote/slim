@@ -1,0 +1,12 @@
+language: php
+php:
+  - "5.5"
+  - "5.4"
+
+install:
+   - composer --dev --profile install
+
+script: test/phpunit.sh --coverage-text
+
+notifications:
+  email: "snepote@gmail.com"
