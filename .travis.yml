@@ -3,9 +3,9 @@ php:
   - "5.4"
 
 install:
-   - composer --dev --profile install
+   - composer --dev --profile --prefer-source install
 
-script: sh test/phpunit.sh --coverage-text
+script: sh test/phpunit.sh
 
 notifications:
   email: "snepote@gmail.com"

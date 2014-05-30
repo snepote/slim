@@ -3,6 +3,9 @@
 # IDE settings
 .idea
 
+# Test reports
+/test/reports
+
 # Vendor
 /vendor
 /bin
