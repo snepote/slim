@@ -18,7 +18,8 @@ before_script:
   - sudo sed -i 's/localhost/localhost slim.dev/g' /etc/hosts
   - sudo service nginx reload
   - sudo service php5-fpm restart
-  - echo $TRAVIS_PHP_VERSION
+  - php --version
+  - sudo cat /var/log/nginx/*.log
 
 script: sh test/behat.sh -p ci
 
