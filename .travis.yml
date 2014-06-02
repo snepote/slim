@@ -10,6 +10,7 @@ script: sh test/phpunit.sh
 
 # Acceptance tests
 before_script:
+  - sudo apt-get install php5-fpm
   - sudo apt-get install nginx
   - sudo service nginx start
   - sudo cp -f build/slim.dev /etc/nginx/sites-available/slim.dev
