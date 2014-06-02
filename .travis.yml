@@ -17,6 +17,8 @@ before_script:
   - sudo ln -s /etc/nginx/sites-available/slim.dev /etc/nginx/sites-enabled/slim.dev
   - sudo sed -i 's/localhost/localhost slim.dev/g' /etc/hosts
   - sudo service nginx reload
+  - sudo service php5-fpm restart
+  - echo $TRAVIS_PHP_VERSION
 
 script: sh test/behat.sh -p ci
 
