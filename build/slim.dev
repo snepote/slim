@@ -1,7 +1,7 @@
 server {
 listen   80;
 server_name  slim.dev;
-root %TRAVIS_BUILD_DIR%/slim.dev/public;
+root /home/travis/build/slim.dev/public;
 access_log /var/log/nginx/slim.dev.access.log;
 error_log /var/log/nginx/slim.dev.error.log;
 
