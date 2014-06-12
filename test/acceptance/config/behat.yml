@@ -23,6 +23,7 @@ ci:
     extensions:
         Behat\MinkExtension\Extension:
             base_url: http://localhost
+            goutte: ~
     formatter:
             name:                       pretty
             parameters:
