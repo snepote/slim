@@ -20,6 +20,9 @@ cli:
             parameters:
                 output_path:            null
 ci:
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: http://localhost:8080
     formatter:
             name:                       pretty
             parameters:

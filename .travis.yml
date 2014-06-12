@@ -5,23 +5,19 @@ php:
 install:
    - composer --dev --profile --prefer-source install
 
-# Unit tests
-script: sh test/phpunit.sh
-
 # Acceptance tests
 before_script:
   - sudo apt-get install php5-fpm
   - sudo apt-get install nginx
+  - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
+  - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo service nginx start
-  - sudo cp -f build/slim.dev /etc/nginx/sites-available/slim.dev
-  - sudo ln -s /etc/nginx/sites-available/slim.dev /etc/nginx/sites-enabled/slim.dev
-  - sudo sed -i 's/localhost/localhost slim.dev/g' /etc/hosts
   - sudo service nginx reload
   - sudo service php5-fpm restart
-  - php --version
-  - sudo cat /var/log/nginx/*.log
 
-script: sh test/behat.sh -p ci
+script:
+  - sh test/phpunit.sh
+  - sh test/behat.sh -p ci
 
 notifications:
   email: "snepote@gmail.com"

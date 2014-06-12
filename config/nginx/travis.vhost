@@ -1,0 +1,30 @@
+server {
+    listen 8080;
+    server_name localhost;
+    root /home/travis/build/snepote/slim/public;
+
+    index  index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php?$uri&$args;
+    }
+
+    # static content
+    location ~* ^.+\.(wsf|xml|pdf|doc|jpg|jpeg|gif|css|png|js|ico|ttf|eot|otf|svg)$ {
+        expires 15d;
+    }
+
+    location ~ \.php($|/) {
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+    }
+
+    gzip on;
+    gzip_comp_level 2;
+    gzip_proxied any;
+    gzip_min_length  1000;
+    gzip_disable     "MSIE [1-6]\."
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+}
