@@ -7,12 +7,11 @@ install:
 
 # Acceptance tests
 before_script:
-  - sudo apt-get install php5-fpm
   - sudo apt-get install nginx
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo service nginx restart
-  - curl localhost
+  - php5-fpm --version
 
 script:
   - sh test/phpunit.sh
