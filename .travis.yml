@@ -11,7 +11,7 @@ before_script:
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo service nginx restart
-  - php5-fpm --version
+  - dpkg -l | grep php
 
 script:
   - sh test/phpunit.sh
