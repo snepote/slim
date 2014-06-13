@@ -11,9 +11,8 @@ before_script:
   - sudo apt-get install nginx
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
-  - sudo service nginx start
-  - sudo service nginx reload
-  - sudo service php5-fpm restart
+  - sudo service nginx restart
+  - curl localhost
 
 script:
   - sh test/phpunit.sh
