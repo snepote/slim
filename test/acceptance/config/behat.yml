@@ -5,7 +5,7 @@ default:
         bootstrap: %behat.paths.features%/bootstrap
     extensions:
         Behat\MinkExtension\Extension:
-            base_url: http://localhost
+            base_url: http://slim.dev
             goutte: ~
     formatter:
             parameters:
@@ -23,7 +23,6 @@ ci:
     extensions:
         Behat\MinkExtension\Extension:
             base_url: http://localhost
-            goutte: ~
     formatter:
             name:                       pretty
             parameters:
