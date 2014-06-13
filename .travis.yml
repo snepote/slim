@@ -3,6 +3,7 @@ php:
   - "5.4"
 
 install:
+   - composer selfupdate
    - composer --dev --profile --prefer-source install
 
 # Acceptance tests
@@ -11,6 +12,9 @@ before_script:
   - sudo cp -f ./config/nginx/travis.conf /etc/nginx/nginx.conf
   - sudo cp -f ./config/nginx/travis.vhost /etc/nginx/sites-available/default
   - sudo service nginx restart
+  # php5 fpm
+  - cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
+  - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
 
 script:
   - sh test/phpunit.sh
