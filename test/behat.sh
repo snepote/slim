@@ -20,10 +20,10 @@ do
         p)
             PROFILE=${OPTARG}
             ;;
-    h)
-        show_help
-        exit
-        ;;
+        h)
+            show_help
+            exit
+            ;;
         esac
 done
 

@@ -49,4 +49,19 @@ class Index extends Base
             )
         );
     }
+
+    /**
+     * Returns a sample json format
+     *
+     * @return string
+     */
+    public function json()
+    {
+        $this->app->contentType('application/json');
+        $this->app->render(
+            'json.twig', array(
+                'data' => json_encode(array('message' => 'is valid'))
+            )
+        );
+    }
 }

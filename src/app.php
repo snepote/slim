@@ -28,5 +28,6 @@ $app->get(
         (new Snepote\Controller\Index())->hello($name);
     }
 );
+$app->get('/json', 'Snepote\Controller\Index:json');
 
 $app->run();
