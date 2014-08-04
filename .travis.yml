@@ -4,7 +4,7 @@ php:
 
 install:
    - composer selfupdate
-   - composer --dev --profile --prefer-source install
+   - composer --dev --profile --prefer-source --no-interaction install
 
 # Acceptance tests
 before_script:

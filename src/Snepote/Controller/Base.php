@@ -4,7 +4,7 @@
  *
  * PHP version ~5.4
  *
- * @author Sebastian Nepote <sebastian.nepote@tirendo.com>
+ * @author Sebastian Nepote <snepote@gmail.com>
  */
 
 namespace Snepote\Controller;
@@ -13,7 +13,7 @@ namespace Snepote\Controller;
  * Class Base
  *
  * @package Snepote
- * @author  Sebastian Nepote <sebastian.nepote@tirendo.com>
+ * @author  Sebastian Nepote <snepote@gmail.com>
  */
 class Base
 {
