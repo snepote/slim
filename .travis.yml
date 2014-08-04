@@ -17,8 +17,11 @@ before_script:
   - ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
 
 script:
+  - mkdir -p build/logs
   - sh test/phpunit.sh
   - sh test/behat.sh -p ci
+after_script:
+  - sh test/coveralls.sh
 
 notifications:
   email: "snepote@gmail.com"

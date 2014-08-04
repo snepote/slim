@@ -5,6 +5,7 @@
 
 # Test reports
 /test/reports
+/build
 
 # Vendor
 /vendor
